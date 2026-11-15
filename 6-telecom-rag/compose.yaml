@@ -1,0 +1,24 @@
+name: telecom-rag
+
+services:
+  embeddings:
+    build:
+      context: ./embedding-service
+    image: telecom-embedding:cpu
+    mem_limit: 3g
+
+  chroma:
+   image: chromadb/chroma:latest
+   volumes:
+     - chroma-data:/chroma/chroma
+
+  rag-app:
+     build: ./rag-app
+     image:  telecom-rag-app:v1
+     mem_limit: 2g
+     ports:
+       - "8501:8501"
+     env_file:
+       - path: ./rag-app/.env
+         required: false
+               
