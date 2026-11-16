@@ -6,7 +6,7 @@ WORKDIR /app
 
 ENV UV_LINK_MODE=copy \
     PYTHONUNBUFFERED=1 \
-    PATH="/App/.venv/bin:$PATH"
+    PATH="/app/.venv/bin:$PATH"
 
 COPY pyproject.toml uv.lock ./
 

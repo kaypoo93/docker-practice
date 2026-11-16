@@ -22,8 +22,7 @@ except ImportError:  # pragma: no cover - fallback for minimal envs
 
         pass
 
-EMBEDDING_URL = os.getenv("EMBEDDING_URL", "http://localhost:8001")
-
+EMBEDDING_URL = os.getenv("EMBEDDING_SERVICE_URL", "http://localhost:8001")
 
 class RemoteEmbeddings(Embeddings):
     def __init__(self, url: str = EMBEDDING_URL, batch_size: int = 64):

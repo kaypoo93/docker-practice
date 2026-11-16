@@ -31,7 +31,7 @@ except ModuleNotFoundError:
     ChatGroq = import_module("langchain_groq").ChatGroq
 
 try:
-    build_retriever = import_module(".retriever", __package__).build_retriever
+    build_retriever = import_module("retriever").build_retriever
 except (ImportError, ModuleNotFoundError):
     build_retriever = import_module("retriever").build_retriever
 
