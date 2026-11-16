@@ -4,6 +4,7 @@ services:
   embeddings:
     build:
       context: ./embedding-service
+      dockerfile: Dockerfile
     image: telecom-embedding:cpu
     mem_limit: 3g
 
